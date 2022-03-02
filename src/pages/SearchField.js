@@ -46,7 +46,7 @@ const SearchField = () => {
               renderInput={(params) => (
                 <TextField
                   {...params}
-                  label="Choose a country"
+                  label="Search for item"
                   inputProps={{
                     ...params.inputProps,
                     autoComplete: "new-password"

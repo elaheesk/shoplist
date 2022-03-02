@@ -13,7 +13,7 @@ import SearchField from "./pages/SearchField";
 const App = () => {
   return (
     <Grid
-      //sx={{ backgroundColor: "#f5f5f5" }}
+     
       container
       direction="column"
       padding={2}
