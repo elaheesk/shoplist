@@ -16,9 +16,9 @@ const NavigationBar = () => {
   } = ContextFunction();
 
   return (
-    <Grid container justifyContent="space-between">
+    <Grid container justifyContent="space-between"  >
       <Grid item>
-        <Typography fontWeight={"light"} variant="body" sx={{marginRight: 3}}>
+       <Typography fontWeight={"light"} variant="body" sx={{marginRight: 3}}>
           <Link component={RouterLink} to="/">
             Home
           </Link>
