@@ -21,7 +21,7 @@ import {
   ImageListItem,
   Button,
   Box,
-  Modal
+  Modal,
 } from "@mui/material";
 import { fontSize } from "@mui/system";
 
@@ -34,15 +34,12 @@ const style = {
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
-  p: 4
+  p: 4,
 };
 
 const ProductCard = ({ product }) => {
-  const {
-    increaseProductAmount,
-    decreaseProductAmount,
-    likeProduct
-  } = ContextFunction();
+  const { increaseProductAmount, decreaseProductAmount, likeProduct } =
+    ContextFunction();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
