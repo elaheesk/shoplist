@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import { ContextFunction } from "../UserContext";
 import { Link } from "react-router-dom";
@@ -19,11 +19,9 @@ import {
   Rating,
   Skeleton,
   ImageListItem,
-  Button,
   Box,
   Modal,
 } from "@mui/material";
-import { fontSize } from "@mui/system";
 
 const style = {
   position: "absolute",
@@ -45,7 +43,13 @@ const ProductCard = ({ product }) => {
   const handleClose = () => setOpen(false);
 
   return (
-    <Card sx={{ width: 330, height: 420 }}>
+    <Card
+      sx={{
+        width: 330,
+        height: 420,
+        boxShadow: "0 4px 5px 4px rgba(125, 149, 216, 0.7)",
+      }}
+    >
       <CardHeader
         action={
           <IconButton onClick={() => likeProduct(product)}>

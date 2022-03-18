@@ -7,7 +7,7 @@ import {
   Typography,
   InputLabel,
   MenuItem,
-  FormControl
+  FormControl,
 } from "@mui/material";
 
 const Products = () => {
@@ -17,7 +17,7 @@ const Products = () => {
     "women's clothing",
     "men's clothing",
     "jewelery",
-    "electronics"
+    "electronics",
   ]);
 
   const { products } = ContextFunction();

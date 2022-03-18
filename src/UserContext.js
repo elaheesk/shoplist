@@ -5,7 +5,7 @@ const UserContext = createContext();
 export const ProductProvider = (props) => {
   const [products, setProducts] = useState([]);
   const [countTotalAmountProducts, setCountTotalAmountProducts] = useState(0);
-  const [countTotalLikes, setCountTotalLikes] = useState(0);
+
   const [favouriteProducts, setFavouriteProducts] = useState([]);
   const [totalPriceAllProducts, setTotalPriceAllProducts] = useState(0);
   const [checkOutProducts, setCheckOutProducts] = React.useState([]);
@@ -45,7 +45,7 @@ export const ProductProvider = (props) => {
 
   useEffect(() => {
     calculateTotal();
-    calculateTotalLikes();
+
     calculatePriceAllProducts();
   });
 
@@ -65,13 +65,6 @@ export const ProductProvider = (props) => {
       return total + product.amount;
     }, 0);
     setCountTotalAmountProducts(countTotalAmountProducts);
-  };
-
-  const calculateTotalLikes = () => {
-    const countTotalLikes = favouriteProducts.reduce((total, product) => {
-      return total + product.liked;
-    }, 0);
-    setCountTotalLikes(countTotalLikes);
   };
 
   const calculatePriceAllProducts = () => {
@@ -115,12 +108,7 @@ export const ProductProvider = (props) => {
     calculateTotal();
     calculatePriceAllProducts();
   };
-  // const contextValues = {
-  //   products,
-  //   setProducts,
-  //   increaseProductAmount,
-  //   decreaseProductAmount
-  // };
+
   return (
     <UserContext.Provider
       value={{
@@ -129,7 +117,6 @@ export const ProductProvider = (props) => {
         increaseProductAmount,
         decreaseProductAmount,
         countTotalAmountProducts,
-        countTotalLikes,
         setCountTotalAmountProducts,
         totalPriceAllProducts,
         setTotalPriceAllProducts,
@@ -137,7 +124,7 @@ export const ProductProvider = (props) => {
         favouriteProducts,
         setFavouriteProducts,
         checkOutProducts,
-        setCheckOutProducts
+        setCheckOutProducts,
       }}
     >
       {props.children}

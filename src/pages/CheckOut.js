@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import {
   ExpandMore as ExpandMoreIcon,
-  Favorite as FavoriteIcon
+  Favorite as FavoriteIcon,
 } from "@mui/icons-material";
 
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -28,7 +28,7 @@ import {
   AccordionSummary,
   AccordionDetails,
   Rating,
-  Skeleton
+  Skeleton,
 } from "@mui/material";
 
 const CheckOut = () => {
@@ -39,7 +39,7 @@ const CheckOut = () => {
     increaseProductAmount,
     decreaseProductAmount,
     likeProduct,
-    countTotalAmountProducts
+    countTotalAmountProducts,
   } = ContextFunction();
 
   const [open, setOpen] = React.useState(false);
@@ -55,7 +55,7 @@ const CheckOut = () => {
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
-    p: 4
+    p: 4,
   };
   const deleteProduct = (prodToRemove) => {
     const zeroAmount = products.map((product) => {
@@ -118,7 +118,14 @@ const CheckOut = () => {
       <Grid item>
         <Grid container direction="column">
           {checkOutProducts.map((checkedOut, index) => (
-            <Card key={checkedOut.id} sx={{ width: 330, height: 420 }}>
+            <Card
+              key={checkedOut.id}
+              sx={{
+                width: 330,
+                height: 420,
+                boxShadow: "0 4px 5px 4px rgba(125, 149, 216, 0.7)",
+              }}
+            >
               <CardHeader
                 action={
                   <IconButton onClick={() => likeProduct(checkedOut)}>

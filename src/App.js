@@ -1,5 +1,5 @@
 import React from "react";
-import { ContextFunction } from "./UserContext";
+
 import Products from "./pages/Products";
 import Home from "./pages/Home";
 import Favourites from "./pages/Favourites";
@@ -12,13 +12,7 @@ import SearchField from "./pages/SearchField";
 
 const App = () => {
   return (
-    <Grid
-     
-      container
-      direction="column"
-      padding={2}
-      spacing={3}
-    >
+    <Grid container direction="column" padding={2} spacing={3}>
       <Grid container direction="row" item>
         <NavigationBar />
       </Grid>
@@ -36,4 +30,3 @@ const App = () => {
   );
 };
 export default App;
-
