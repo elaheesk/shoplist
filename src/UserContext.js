@@ -1,14 +1,12 @@
 import React, { useState, useEffect, createContext, useContext } from "react";
-
 const UserContext = createContext();
 
 export const ProductProvider = (props) => {
   const [products, setProducts] = useState([]);
-  const [countTotalAmountProducts, setCountTotalAmountProducts] = useState(0);
-
   const [favouriteProducts, setFavouriteProducts] = useState([]);
-  const [totalPriceAllProducts, setTotalPriceAllProducts] = useState(0);
   const [checkOutProducts, setCheckOutProducts] = React.useState([]);
+  const [countTotalAmountProducts, setCountTotalAmountProducts] = useState(0);
+  const [totalPriceAllProducts, setTotalPriceAllProducts] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,15 +29,12 @@ export const ProductProvider = (props) => {
         return product;
       }
     });
-    setFavouriteProducts(myFavouriteProducts);
-  }, [products]);
-
-  useEffect(() => {
     const mycheckoutProducts = products.filter((product) => {
       if (product.amount > 0) {
         return product;
       }
     });
+    setFavouriteProducts(myFavouriteProducts);
     setCheckOutProducts(mycheckoutProducts);
   }, [products]);
 
@@ -117,14 +112,10 @@ export const ProductProvider = (props) => {
         increaseProductAmount,
         decreaseProductAmount,
         countTotalAmountProducts,
-        setCountTotalAmountProducts,
         totalPriceAllProducts,
-        setTotalPriceAllProducts,
         likeProduct,
         favouriteProducts,
-        setFavouriteProducts,
         checkOutProducts,
-        setCheckOutProducts,
       }}
     >
       {props.children}

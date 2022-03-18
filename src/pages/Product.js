@@ -6,19 +6,15 @@ import { Grid } from "@mui/material";
 
 const Product = () => {
   const { products } = ContextFunction();
-  const [product, setProduct] = useState(null);
   const { id } = useParams();
+  const [product, setProduct] = useState(null);
+
   React.useEffect(() => {
     const fetchData = async () => {
       const resp = await fetch(`https://fakestoreapi.com/products/${id}`);
       const data = await resp.json();
-
       const addNewProperties = { ...data, liked: false, amount: 0 };
-
       setProduct(addNewProperties);
-
-      //setProduct(data);
-      console.log(addNewProperties, "addNewPropertyOBJECT");
     };
 
     fetchData();
@@ -30,7 +26,7 @@ const Product = () => {
       setProduct(obj);
     }
   }, [products]);
-  console.log(product, "PRODUCT");
+
   return (
     <Grid item xs={2} sm={4} md={4}>
       {product && (

@@ -1,14 +1,13 @@
 import React from "react";
-
-import Products from "./pages/Products";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import NavigationBar from "./components/NavigationBar";
 import Favourites from "./pages/Favourites";
 import CheckOut from "./pages/CheckOut";
+import Products from "./pages/Products";
 import Product from "./pages/Product";
-import { Grid } from "@mui/material";
-import { Routes, Route } from "react-router-dom";
-import NavigationBar from "./components/NavigationBar";
 import SearchField from "./pages/SearchField";
+import { Grid } from "@mui/material";
 
 const App = () => {
   return (

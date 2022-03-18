@@ -1,6 +1,6 @@
 import React from "react";
-import ProductCard from "../components/ProductCard";
 import { ContextFunction } from "../UserContext";
+import ProductCard from "../components/ProductCard";
 import {
   Grid,
   Select,
@@ -11,16 +11,15 @@ import {
 } from "@mui/material";
 
 const Products = () => {
+  const { products } = ContextFunction();
   const [selectedValue, setSelectedValue] = React.useState([]);
   const [inputValue, setInputValue] = React.useState("");
-  const [categories, setCategories] = React.useState([
+  const categories = [
     "women's clothing",
     "men's clothing",
     "jewelery",
     "electronics",
-  ]);
-
-  const { products } = ContextFunction();
+  ];
 
   React.useEffect(() => {
     if (inputValue) {

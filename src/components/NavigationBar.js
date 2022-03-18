@@ -1,15 +1,16 @@
 import React from "react";
-import { Grid, Skeleton, Typography, Badge, Link } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import { Favorite as FavoriteIcon } from "@mui/icons-material";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
 import { ContextFunction } from "../UserContext";
+import { Grid, Skeleton, Typography, Badge, Link } from "@mui/material";
+import {
+  Favorite as FavoriteIcon,
+  ShoppingCart as ShoppingCartIcon,
+} from "@mui/icons-material";
 
 const NavigationBar = () => {
   const {
     favouriteProducts,
-    countTotalLikes,
+
     countTotalAmountProducts,
     totalPriceAllProducts,
     checkOutProducts,
@@ -39,7 +40,7 @@ const NavigationBar = () => {
             Favourites
           </Link>
         </Typography>
-        <Badge color="secondary" badgeContent={countTotalLikes}>
+        <Badge color="secondary" badgeContent={favouriteProducts.length}>
           {favouriteProducts.length ? (
             <FavoriteIcon style={{ fill: "red" }} fontSize="small" />
           ) : (

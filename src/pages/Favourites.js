@@ -2,7 +2,6 @@ import React from "react";
 import { ContextFunction } from "../UserContext";
 import ProductCard from "../components/ProductCard";
 import { Grid, Typography } from "@mui/material";
-
 import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
 
 const Favourites = () => {

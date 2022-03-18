@@ -2,10 +2,11 @@ import React from "react";
 
 import { ContextFunction } from "../UserContext";
 import { Link } from "react-router-dom";
-import { Favorite as FavoriteIcon } from "@mui/icons-material";
-
-import RemoveIcon from "@mui/icons-material/Remove";
-import AddIcon from "@mui/icons-material/Add";
+import {
+  Favorite as FavoriteIcon,
+  Remove as RemoveIcon,
+  Add as AddIcon,
+} from "@mui/icons-material";
 
 import {
   Grid,

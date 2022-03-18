@@ -4,12 +4,8 @@ import ProductCard from "../components/ProductCard";
 import { Grid, TextField, Autocomplete, Box } from "@mui/material";
 
 const SearchField = () => {
-  const [searchTextValue, setSearchTextValue] = React.useState(null);
-
   const { products } = ContextFunction();
-
-  console.log("serc", searchTextValue);
-  console.log("products", products);
+  const [searchTextValue, setSearchTextValue] = React.useState(null);
 
   React.useEffect(() => {
     if (searchTextValue) {
@@ -49,7 +45,7 @@ const SearchField = () => {
                   label="Search for item"
                   inputProps={{
                     ...params.inputProps,
-                    autoComplete: "new-password"
+                    autoComplete: "new-password",
                   }}
                 />
               )}

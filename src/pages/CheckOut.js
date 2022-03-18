@@ -1,16 +1,15 @@
 import React from "react";
 import { ContextFunction } from "../UserContext";
-import RemoveIcon from "@mui/icons-material/Remove";
-import AddIcon from "@mui/icons-material/Add";
 import { Link } from "react-router-dom";
-import { styled } from "@mui/material/styles";
 import {
   ExpandMore as ExpandMoreIcon,
+  Add as AddIcon,
   Favorite as FavoriteIcon,
+  Remove as RemoveIcon,
+  Delete as DeleteIcon,
+  SentimentVeryDissatisfied as SentimentVeryDissatisfiedIcon,
 } from "@mui/icons-material";
 
-import DeleteIcon from "@mui/icons-material/Delete";
-import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
 import {
   Box,
   Modal,
@@ -66,8 +65,6 @@ const CheckOut = () => {
       }
     });
     setProducts(zeroAmount);
-
-    console.log(zeroAmount, "zerooo");
   };
   return (
     <Grid container direction="column" spacing={5}>
